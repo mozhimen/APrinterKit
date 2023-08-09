@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name=".CustomApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:preserveLegacyExternalStorage="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PidKit_Printer_Dascom">
+        <activity
+            android:name=".DP130LActivity_ZPL"
+            android:exported="false"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".DP130LActivity_Pos"
+            android:exported="false"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".OKIActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ESCPOS_9PinActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SelectEmulationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ESCPActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ESCPOSActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TSPLActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EPLActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ZPLActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CPCLActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

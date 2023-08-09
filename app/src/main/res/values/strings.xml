@@ -1,0 +1,96 @@
+<resources>
+    <string name="app_name">PidKit_Printer_Dascom</string>
+
+    <string name="select_emulation_title_tips">打印机仿真</string>
+    <string name="image_show_title">预览</string>
+    <string name="select_emulation_message_tips"><![CDATA[
+     这是一种基于命令语言的打印机控制码
+    打印机将其用作创建打印在标签上的文字图像等信息。
+    <br/><br/>
+    例如:
+    <br/>
+    <font color="#0000FF">热敏打印机:</font>
+    ZPL、ESCPOS、TSPL、EPL
+    <br/>
+    <font color="#0000FF">针式打印机:</font>
+    ESCP/P2/PK/PK2/POS/OKI
+    <br />
+     <font color="#0000FF">日志文件路径:</font>内部存储/DsLog/xxx.txt
+    ]]></string>
+    <string name="nfc_operation_title_tips">NFC操作</string>
+    <string name="nfc_operation_message_tips"><![CDATA[
+    <font color="#0000FF">NFC传输: </font> <br/>
+    请选择要发送的内容，提示
+    <font color="#FF0000">发送成功</font>，
+    然后将手机nfc位置紧贴打印机nfc位置，提示
+    <font color="#FF0000">正在上传</font>，
+    直到提示
+    <font color="#FF0000">上传完成</font>。<br/><br/>
+    <font color="#0000FF">NFC一碰即连蓝牙/WIFI: </font> <br/>
+    开启<font color="#FF0000">一碰即连开关</font>，将手机nfc位置紧贴打印机nfc位置
+    ]]></string>
+    <string name="img_waring">预览 (*注意:打印pdf只打印1页样张,pdf大小建议在1M以下)</string>
+
+
+
+
+    <string name="text">文本</string>
+    <string name="One_dimensional_code">一维码</string>
+    <string name="qrcode">二维码</string>
+    <string name="uport_get_status">U口获取状态</string>
+    <string name="please_select_printer_model">请选择当前打印机的仿真模式:</string>
+    <string name="confirm">确定</string>
+    <string name="record">日志</string>
+    <string name="getPrinterBlueStatus">蓝牙获取打印机机状态</string>
+    <string name="roat_txt">旋转文本</string>
+    <string name="line_feed">换行</string>
+    <string name="usb_operation">Usb操作:</string>
+    <string name="scan_devices">扫描设备</string>
+    <string name="connection_device">连接设备</string>
+    <string name="disconnect">断开连接</string>
+    <string name="bluetooth_operation">蓝牙操作:</string>
+    <string name="bluetooth_name">蓝牙名称：</string>
+    <string name="select_bluetooth_printer">选择蓝牙打印机</string>
+    <string name="wifi_operation">WIFI操作:</string>
+    <string name="wifi_setting_interface">WIFI设置页面</string>
+    <string name="connection_wifi_printer">连接WIFI打印机</string>
+    <string name="select_picture">选择图片</string>
+    <string name="print_picture">打印图片</string>
+    <string name="select_pdf">选择pdf</string>
+    <string name="print_pdf">打印pdf</string>
+    <string name="nfc_operation">NFC操作：</string>
+    <string name="start_use">启用：</string>
+    <string name="touch_connect">一碰即连：</string>
+    <string name="status">状态:</string>
+    <string name="nfc_setting_interface">nfc设置界面</string>
+    <string name="paper_error">卡纸出错:</string>
+    <string name="lack_paper">缺纸:</string>
+    <string name="devices_busy">设备忙:</string>
+    <string name="buffer_not_empty">缓冲非空:</string>
+    <string name="power_reset">电源复位:</string>
+    <string name="print_head_lifting">打印头抬起:</string>
+    <string name="paper_type">纸张类型:</string>
+    <string name="printer_head_overheating">打印头过热:</string>
+    <string name="tag_paper">标签纸</string>
+    <string name="continuous_paper">连续纸</string>
+    <string name="home_error">归位出错:</string>
+    <string name="have_paper">有纸:</string>
+    <string name="paper_will_runout">纸将将尽:</string>
+    <string name="cutter_error">切刀出错:</string>
+    <string name="online">联机:</string>
+    <string name="please_select_printer_picture">请选择打印图片</string>
+    <string name="please_select_pdf">请选择PDF</string>
+    <string name="please_first_connect_printer">请先连接打印机</string>
+    <string name="print_success">发送成功</string>
+    <string name="print_failed">发送失败</string>
+    <string name="scan_available_usb_devices">扫描到可用usb设备</string>
+    <string name="no_usb_authorization">没有usb授权</string>
+    <string name="usb_device_not_scanned">没有扫描到Usb设备</string>
+    <string name="usb_device_connected_successfully">usb设备连接成功</string>
+    <string name="usb_device_connected_failed">usb设备连接失败</string>
+    <string name="please_scan_usbdevice_permissions">请先扫描usb设备并授予权限</string>
+    <string name="please_select_bluetooth_first">请先选择蓝牙打印机</string>
+    <string name="connection_succeeded">连接成功</string>
+    <string name="connection_failed">连接失败</string>
+    <string name="permission_acquisition_failed">权限获取失败!</string>
+</resources>
