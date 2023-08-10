@@ -22,6 +22,7 @@ import com.dascom.print.Transmission.Pipe;
 import com.dascom.print.Transmission.WifiPipe;
 import com.dascom.print.Utils.LogUtils;
 import com.dascom.print.Utils.Unit.DPI_300;
+import com.mozhimen.pidk_printer_dascom_test.temps.PrintUtil;
 
 import static com.dascom.print.Utils.Unit.DPI_203.CM;
 import static com.dascom.print.Utils.Unit.DPI_203.MM;
@@ -103,39 +104,40 @@ public class ZPLActivity extends BaseActivity {
         new Thread(() -> {
 
             smartPrint.setLabelStart();
-            smartPrint.setLabelWidth(40 * DPI_300.MM);
-            smartPrint.setLabelLength(CM);
-            smartPrint.printText(0, 0, 2, 2, "打印字体：");
-            smartPrint.setLabelEnd();
-
-
-            smartPrint.setLabelStart();
-            smartPrint.setLabelWidth(40 * MM);
-            smartPrint.setLabelLength(CM);
-            smartPrint.printText(10 * DPI_300.MM, 10 * DPI_300.MM, 2, 2, "打印字体：");
-            smartPrint.setLabelEnd();
-
-            smartPrint.setLabelStart();
-            smartPrint.setLabelWidth(75 * MM);
-            smartPrint.setLabelLength(CM);
-            smartPrint.printText(0, 0, 1, 1, "FNT字体：");
-            smartPrint.setLabelEnd();
-
-            smartPrint.setLabelStart();//标签开始
-            smartPrint.setLabelWidth(75 * MM);//标签宽度
-            smartPrint.setLabelLength((int) (6.5 * CM));//标签长度
-            //打印文本
-            smartPrint.printText(5 * MM, 0, 1, 1, "得实集团1988年成立于香港，是一家以香港为总部的kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
-            //文本高宽放大两倍
-            smartPrint.printText(0, 4 * MM, 2, 2, "高科技企业集团。经过三十");
-            //文本高宽放大三倍
-            smartPrint.printText(0, 11 * MM, 3, 3, "年的努力，得实集");
-            //文本高宽放大四倍
-            smartPrint.printText(0, 21 * MM, 4, 4, "团已发展成为");
-            smartPrint.printText(0, 34 * MM, 3, 3, "涵盖计算机硬件、");
-            smartPrint.printText(0, 44 * MM, 2, 2, "个人健康服务、LED照明等");
-            smartPrint.printText(0, 51 * MM, 1, 1, "业务领域的全球性公司，倾力打造“百年老店”是得实");
-            smartPrint.printText(0, 55 * MM, 1, 1, "集团一贯秉持的目标。");
+            PrintUtil.printDemo(smartPrint);
+//            smartPrint.setLabelWidth(40 * DPI_300.MM);
+//            smartPrint.setLabelLength(CM);
+//            smartPrint.printText(0, 0, 2, 2, "打印字体：");
+//            smartPrint.setLabelEnd();
+//
+//
+//            smartPrint.setLabelStart();
+//            smartPrint.setLabelWidth(40 * MM);
+//            smartPrint.setLabelLength(CM);
+//            smartPrint.printText(10 * DPI_300.MM, 10 * DPI_300.MM, 2, 2, "打印字体：");
+//            smartPrint.setLabelEnd();
+//
+//            smartPrint.setLabelStart();
+//            smartPrint.setLabelWidth(75 * MM);
+//            smartPrint.setLabelLength(CM);
+//            smartPrint.printText(0, 0, 1, 1, "FNT字体：");
+//            smartPrint.setLabelEnd();
+//
+//            smartPrint.setLabelStart();//标签开始
+//            smartPrint.setLabelWidth(75 * MM);//标签宽度
+//            smartPrint.setLabelLength((int) (6.5 * CM));//标签长度
+//            //打印文本
+//            smartPrint.printText(5 * MM, 0, 1, 1, "得实集团1988年成立于香港，是一家以香港为总部的kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
+//            //文本高宽放大两倍
+//            smartPrint.printText(0, 4 * MM, 2, 2, "高科技企业集团。经过三十");
+//            //文本高宽放大三倍
+//            smartPrint.printText(0, 11 * MM, 3, 3, "年的努力，得实集");
+//            //文本高宽放大四倍
+//            smartPrint.printText(0, 21 * MM, 4, 4, "团已发展成为");
+//            smartPrint.printText(0, 34 * MM, 3, 3, "涵盖计算机硬件、");
+//            smartPrint.printText(0, 44 * MM, 2, 2, "个人健康服务、LED照明等");
+//            smartPrint.printText(0, 51 * MM, 1, 1, "业务领域的全球性公司，倾力打造“百年老店”是得实");
+//            smartPrint.printText(0, 55 * MM, 1, 1, "集团一贯秉持的目标。");
             boolean b = smartPrint.setLabelEnd();//标签结束，然后开始打印
 
             Toast(b ? getResources().getString(R.string.print_success) : getResources().getString(R.string.print_failed));
