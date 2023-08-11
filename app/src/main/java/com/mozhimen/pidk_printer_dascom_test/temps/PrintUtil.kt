@@ -1,6 +1,9 @@
 package com.mozhimen.pidk_printer_dascom_test.temps
 
 import com.dascom.print.PrintCommands.ZPL
+import com.dascom.print.Utils.Unit.DPI_203
+import com.dascom.print.Utils.Unit.DPI_300
+import com.dascom.print.Utils.Unit.DPI_203.CM
 
 
 /**

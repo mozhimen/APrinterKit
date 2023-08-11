@@ -3,7 +3,6 @@ package com.mozhimen.pidk_printer_dascom_test;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,8 +19,6 @@ import com.dascom.print.PrinterInformation.DP230;
 import com.dascom.print.Transmission.BluetoothPipe;
 import com.dascom.print.Transmission.Pipe;
 import com.dascom.print.Transmission.WifiPipe;
-import com.dascom.print.Utils.LogUtils;
-import com.dascom.print.Utils.Unit.DPI_300;
 import com.mozhimen.pidk_printer_dascom_test.temps.PrintUtil;
 
 import static com.dascom.print.Utils.Unit.DPI_203.CM;
@@ -103,13 +100,11 @@ public class ZPLActivity extends BaseActivity {
         }
         new Thread(() -> {
 
-            smartPrint.setLabelStart();
-            PrintUtil.printDemo(smartPrint);
+//            smartPrint.setLabelStart();
 //            smartPrint.setLabelWidth(40 * DPI_300.MM);
 //            smartPrint.setLabelLength(CM);
 //            smartPrint.printText(0, 0, 2, 2, "打印字体：");
 //            smartPrint.setLabelEnd();
-//
 //
 //            smartPrint.setLabelStart();
 //            smartPrint.setLabelWidth(40 * MM);
@@ -138,6 +133,9 @@ public class ZPLActivity extends BaseActivity {
 //            smartPrint.printText(0, 44 * MM, 2, 2, "个人健康服务、LED照明等");
 //            smartPrint.printText(0, 51 * MM, 1, 1, "业务领域的全球性公司，倾力打造“百年老店”是得实");
 //            smartPrint.printText(0, 55 * MM, 1, 1, "集团一贯秉持的目标。");
+
+            PrintUtil.printDemo(smartPrint);
+
             boolean b = smartPrint.setLabelEnd();//标签结束，然后开始打印
 
             Toast(b ? getResources().getString(R.string.print_success) : getResources().getString(R.string.print_failed));
