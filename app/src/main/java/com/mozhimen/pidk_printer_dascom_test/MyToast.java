@@ -1,4 +1,4 @@
-package com.mozhimen.pidk_printer_dascom.utils;
+package com.mozhimen.pidk_printer_dascom_test;
 
 import android.content.Context;
 import android.view.Gravity;

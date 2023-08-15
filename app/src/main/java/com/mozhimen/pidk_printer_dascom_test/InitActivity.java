@@ -1,22 +1,13 @@
-package com.mozhimen.pidk_printer_dascom.utils;
+package com.mozhimen.pidk_printer_dascom_test;
 
-import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.KeyEvent;
 import android.view.View;
 
-import java.util.ArrayList;
-import java.util.List;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.mozhimen.pidk_printer_dascom.R;
 
@@ -32,7 +23,6 @@ public class InitActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
         new MyToast(this);
-        ActivityUtil.getInstance().addActivity(this);
         super.onCreate(savedInstanceState);
     }
 
@@ -52,7 +42,6 @@ public class InitActivity extends AppCompatActivity {
         //Activity销毁时，提示系统回收
         //System.gc();
         //移除Activity
-        ActivityUtil.getInstance().removeActivity(this);
         super.onDestroy();
     }
 

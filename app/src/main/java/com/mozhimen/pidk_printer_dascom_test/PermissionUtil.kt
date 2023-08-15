@@ -2,7 +2,7 @@
  * Copyright (c) 2020 DASCOM All rights reserved.
  */
 
-package com.mozhimen.pidk_printer_dascom.utils
+package com.mozhimen.pidk_printer_dascom_test
 
 import android.Manifest
 import android.app.Activity

@@ -14,7 +14,6 @@ import androidx.annotation.RequiresApi;
 
 import com.dascom.print.PrintCommands.TSPL;
 import com.dascom.print.Transmission.Pipe;
-import com.mozhimen.pidk_printer_dascom.utils.Utils;
 
 public class TSPLActivity extends BaseActivity{
     TSPL smartPrint = null;

@@ -6,9 +6,8 @@ package com.mozhimen.pidk_printer_dascom_test;
 
 
 import static android.os.Build.VERSION.SDK_INT;
-import static android.os.Environment.DIRECTORY_DOWNLOADS;
 
-import static com.mozhimen.pidk_printer_dascom.utils.PermissionUtil.*;
+import static com.mozhimen.pidk_printer_dascom_test.PermissionUtil.*;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
@@ -55,8 +54,7 @@ import com.luck.picture.lib.style.PictureParameterStyle;
 import com.luck.picture.lib.style.PictureWindowAnimationStyle;
 import com.mozhimen.bluetoothk.BluetoothConnectWithDataManageCallback;
 import com.mozhimen.bluetoothk.MedBluetooth;
-import com.mozhimen.pidk_printer_dascom.utils.InitActivity;
-import com.mozhimen.pidk_printer_dascom.utils.PermissionUtil;
+import com.mozhimen.pidk_printer_dascom.PidKPrinterDascom;
 import com.nbsp.materialfilepicker.MaterialFilePicker;
 import com.nbsp.materialfilepicker.ui.FilePickerActivity;
 import java.io.File;
@@ -94,7 +92,6 @@ public abstract class BaseActivity extends InitActivity {
         //init();
         PermissionUtil.requestPermissions(this, 0, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE,
                 ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION);
-
 
         requestPermission();
 
@@ -215,28 +212,46 @@ public abstract class BaseActivity extends InitActivity {
      * 选择蓝牙打印机
      */
     public void selectBluetoothPrinter(View view) {
-        if (hadPermission(this, ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION)) {
-            MedBluetooth.connectBluetooth(this, new BluetoothConnectWithDataManageCallback() {
-                @Override
-                public void connected(BluetoothSocket socket, BluetoothDevice device, Exception e) {
+//        if (hadPermission(this, ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION)) {
+//            MedBluetooth.connectBluetooth(this, new BluetoothConnectWithDataManageCallback() {
+//                @Override
+//                public void connected(BluetoothSocket socket, BluetoothDevice device, Exception e) {
+//
+//                }
+//
+//                @Override
+//                public void disconnected() {
+//
+//                }
+//
+//                @Override
+//                public void getMac(String BtName, String mac) {
+//                    tv_btName.setText(BtName);
+//                    btMac = mac;
+//                }
+//            });
+//        } else {
+//            PermissionUtil.requestPermissions(this, 10003, ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION);
+//        }
+        PidKPrinterDascom.selectBluetoothPrinter(this,
+                new BluetoothConnectWithDataManageCallback() {
+                    @Override
+                    public void connected(BluetoothSocket socket, BluetoothDevice device, Exception e) {
 
+                    }
+
+                    @Override
+                    public void disconnected() {
+
+                    }
+
+                    @Override
+                    public void getMac(String BtName, String mac) {
+                        tv_btName.setText(BtName);
+                        btMac = mac;
+                    }
                 }
-
-                @Override
-                public void disconnected() {
-
-                }
-
-                @Override
-                public void getMac(String BtName, String mac) {
-                    tv_btName.setText(BtName);
-                    btMac = mac;
-                }
-            });
-        } else {
-            PermissionUtil.requestPermissions(this, 10003, ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION);
-        }
-
+                );
     }
 
 

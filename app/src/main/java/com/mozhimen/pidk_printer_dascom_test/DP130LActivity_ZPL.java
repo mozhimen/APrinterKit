@@ -5,20 +5,12 @@
 package com.mozhimen.pidk_printer_dascom_test;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.graphics.Bitmap;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
 import android.nfc.Tag;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -30,9 +22,7 @@ import com.dascom.print.Transmission.BluetoothPipe;
 import com.dascom.print.Transmission.NfcPipe;
 import com.dascom.print.Transmission.Pipe;
 import com.dascom.print.Transmission.WifiPipe;
-import com.dascom.print.Utils.HalfTone;
 import com.dascom.print.Utils.NfcUtils;
-import com.mozhimen.pidk_printer_dascom.utils.DialogUtils;
 
 import java.io.IOException;
 import java.util.Map;

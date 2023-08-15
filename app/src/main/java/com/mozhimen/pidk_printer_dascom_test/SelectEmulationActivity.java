@@ -8,10 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
-import com.mozhimen.pidk_printer_dascom.utils.DialogUtils;
-import com.mozhimen.pidk_printer_dascom.utils.InitActivity;
-
-
 /*
  * Copyright (c) 2020 DASCOM All rights reserved.
  */

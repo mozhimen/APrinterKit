@@ -24,3 +24,6 @@ include ':pidk_printer_dascom'
 include ':BluetoothKit'
 project(':BluetoothKit').projectDir = new File("F:\\GitHub\\BluetoothKit")
 include ':BluetoothKit:bluetoothk'
+include ':SwiftKit'
+project(':SwiftKit').projectDir = new File("C:\\Users\\${System.getenv().get("USERNAME")}\\Documents\\GitHub\\SwiftKit")
+include ':SwiftKit:basick'
