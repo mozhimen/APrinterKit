@@ -1,13 +1,12 @@
 package com.mozhimen.pidk_printer_dascom
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import com.mozhimen.basick.manifestk.cons.CPermission
 import com.mozhimen.basick.manifestk.permission.ManifestKPermission
 import com.mozhimen.basick.utilk.android.app.UtilKPermission
 import com.mozhimen.basick.utilk.android.util.wt
 import com.mozhimen.basick.utilk.bases.BaseUtilK
-import com.mozhimen.bluetoothk.BluetoothConnectWithDataManageCallback
+import com.mozhimen.bluetoothk.commons.BluetoothConnectWithDataManageCallback
 import com.mozhimen.bluetoothk.MedBluetooth
 
 /**
