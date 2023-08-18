@@ -52,7 +52,7 @@ import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.listener.OnResultCallbackListener;
 import com.luck.picture.lib.style.PictureParameterStyle;
 import com.luck.picture.lib.style.PictureWindowAnimationStyle;
-import com.mozhimen.bluetoothk.commons.BluetoothConnectWithDataManageCallback;
+import com.mozhimen.bluetoothk.commons.BluetoothKConnectWithDataManageCallback;
 import com.mozhimen.pidk_printer_dascom.PidKPrinterDascom;
 import com.nbsp.materialfilepicker.MaterialFilePicker;
 import com.nbsp.materialfilepicker.ui.FilePickerActivity;
@@ -233,7 +233,7 @@ public abstract class BaseActivity extends InitActivity {
 //            PermissionUtil.requestPermissions(this, 10003, ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION);
 //        }
         PidKPrinterDascom.selectBluetoothPrinter(this,
-                new BluetoothConnectWithDataManageCallback() {
+                new BluetoothKConnectWithDataManageCallback() {
                     @Override
                     public void connected(BluetoothSocket socket, BluetoothDevice device, Exception e) {
 
@@ -255,6 +255,7 @@ public abstract class BaseActivity extends InitActivity {
 
 
     public void connect(View view) {
+        Log.d(TAG, "connect: btMac " +btMac);
         if (pipe != null) {
             pipe.close();
             pipe = null;

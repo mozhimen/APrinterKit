@@ -6,7 +6,7 @@ import com.mozhimen.basick.manifestk.permission.ManifestKPermission
 import com.mozhimen.basick.utilk.android.app.UtilKPermission
 import com.mozhimen.basick.utilk.android.util.wt
 import com.mozhimen.basick.utilk.bases.BaseUtilK
-import com.mozhimen.bluetoothk.MedBluetooth
+import com.mozhimen.bluetoothk.BluetoothK
 import com.mozhimen.bluetoothk.commons.BluetoothKConnectWithDataManageCallback
 
 /**
@@ -20,7 +20,7 @@ object PidKPrinterDascom : BaseUtilK() {
     @JvmStatic
     fun selectBluetoothPrinter(activity: AppCompatActivity, callback: BluetoothKConnectWithDataManageCallback) {
         if (UtilKPermission.checkPermissions(arrayOf(CPermission.ACCESS_COARSE_LOCATION, CPermission.ACCESS_FINE_LOCATION))) {
-            MedBluetooth.connectBluetooth(_context, callback)
+            BluetoothK.instance.connectBluetooth(_context, callback)
         } else {
             ManifestKPermission.requestPermissions(activity, arrayOf(CPermission.ACCESS_COARSE_LOCATION, CPermission.ACCESS_FINE_LOCATION)) {
                 if (it) selectBluetoothPrinter(activity, callback)
