@@ -232,25 +232,25 @@ public abstract class BaseActivity extends InitActivity {
 //        } else {
 //            PermissionUtil.requestPermissions(this, 10003, ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION);
 //        }
-        PidKPrinterDascom.selectBluetoothPrinter(this,
-                new BluetoothKConnectWithDataManageCallback() {
-                    @Override
-                    public void connected(BluetoothSocket socket, BluetoothDevice device, Exception e) {
-
-                    }
-
-                    @Override
-                    public void disconnected() {
-
-                    }
-
-                    @Override
-                    public void getMac(String BtName, String mac) {
-                        tv_btName.setText(BtName);
-                        btMac = mac;
-                    }
-                }
-                );
+//        PidKPrinterDascom.getInstance().select(this,
+//                new BluetoothKConnectWithDataManageCallback() {
+//                    @Override
+//                    public void connected(BluetoothSocket socket, BluetoothDevice device, Exception e) {
+//
+//                    }
+//
+//                    @Override
+//                    public void disconnected() {
+//
+//                    }
+//
+//                    @Override
+//                    public void getMac(String BtName, String mac) {
+//                        tv_btName.setText(BtName);
+//                        btMac = mac;
+//                    }
+//                }
+//                );
     }
 
 
