@@ -116,7 +116,7 @@ public class OKIActivity extends BaseActivity {
         }
         new Thread(()->{
             Bitmap bitmap = EncodingHandler.createCode128(360, 180, "abc123");
-            smartPrint.printBitmap(CanvasUtils.BackgroundWhite(bitmap), .0, .0);
+            smartPrint.printBitmap(CanvasUtils.BackgroundWhite(bitmap), 0, 0);
         }).start();
     }
 
@@ -132,7 +132,7 @@ public class OKIActivity extends BaseActivity {
             } catch (WriterException e) {
                 e.printStackTrace();
             }
-            smartPrint.printBitmap(CanvasUtils.BackgroundWhite(bitmap), .0, .0);
+            smartPrint.printBitmap(CanvasUtils.BackgroundWhite(bitmap), 0, 0);
         }).start();
     }
 }

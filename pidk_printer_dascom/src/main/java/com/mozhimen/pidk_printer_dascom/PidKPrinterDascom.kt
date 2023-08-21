@@ -16,6 +16,7 @@ import com.mozhimen.basick.utilk.android.util.wt
 import com.mozhimen.basick.utilk.bases.BaseUtilK
 import com.mozhimen.bluetoothk.BluetoothK
 import com.mozhimen.bluetoothk.commons.BluetoothKConnectWithDataManageCallback
+import com.mozhimen.pidk_printer_dascom.helpers.PrinterDascomUtil
 import java.io.IOException
 
 /**
@@ -66,14 +67,7 @@ class PidKPrinterDascom : BaseUtilK() {
     }
 
     fun select(activity: AppCompatActivity) {
-        if (UtilKPermission.checkPermissions(arrayOf(CPermission.ACCESS_COARSE_LOCATION, CPermission.ACCESS_FINE_LOCATION))) {
-            BluetoothK.instance.connectBluetooth(activity, _innerBluetoothKConnectWithDataManageCallback)
-        } else {
-            ManifestKPermission.requestPermissions(activity, arrayOf(CPermission.ACCESS_COARSE_LOCATION, CPermission.ACCESS_FINE_LOCATION)) {
-                if (it) select(activity)
-                else "selectBluetoothPrinter dont have permission".wt(TAG)
-            }
-        }
+        PrinterDascomUtil.select(activity, _innerBluetoothKConnectWithDataManageCallback)
     }
 
     fun connect() {

@@ -32,6 +32,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import androidx.annotation.LayoutRes;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
@@ -52,10 +53,14 @@ import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.listener.OnResultCallbackListener;
 import com.luck.picture.lib.style.PictureParameterStyle;
 import com.luck.picture.lib.style.PictureWindowAnimationStyle;
+import com.mozhimen.basick.utilk.java.io.UtilKFile;
+import com.mozhimen.basick.utilk.java.util.UtilKDate;
 import com.mozhimen.bluetoothk.commons.BluetoothKConnectWithDataManageCallback;
 import com.mozhimen.pidk_printer_dascom.PidKPrinterDascom;
+import com.mozhimen.pidk_printer_dascom.helpers.PrinterDascomUtil;
 import com.nbsp.materialfilepicker.MaterialFilePicker;
 import com.nbsp.materialfilepicker.ui.FilePickerActivity;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -232,30 +237,29 @@ public abstract class BaseActivity extends InitActivity {
 //        } else {
 //            PermissionUtil.requestPermissions(this, 10003, ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION);
 //        }
-//        PidKPrinterDascom.getInstance().select(this,
-//                new BluetoothKConnectWithDataManageCallback() {
-//                    @Override
-//                    public void connected(BluetoothSocket socket, BluetoothDevice device, Exception e) {
-//
-//                    }
-//
-//                    @Override
-//                    public void disconnected() {
-//
-//                    }
-//
-//                    @Override
-//                    public void getMac(String BtName, String mac) {
-//                        tv_btName.setText(BtName);
-//                        btMac = mac;
-//                    }
-//                }
-//                );
+        PrinterDascomUtil.select(this, new BluetoothKConnectWithDataManageCallback() {
+                    @Override
+                    public void connected(BluetoothSocket socket, BluetoothDevice device, Exception e) {
+
+                    }
+
+                    @Override
+                    public void disconnected() {
+
+                    }
+
+                    @Override
+                    public void getMac(String BtName, String mac) {
+                        tv_btName.setText(BtName);
+                        btMac = mac;
+                    }
+                }
+        );
     }
 
 
     public void connect(View view) {
-        Log.d(TAG, "connect: btMac " +btMac);
+        Log.d(TAG, "connect: btMac " + btMac);
         if (pipe != null) {
             pipe.close();
             pipe = null;
@@ -348,7 +352,8 @@ public abstract class BaseActivity extends InitActivity {
                     Log.e(TAG, "onActivityResult: " + pdfPath);
                 }
             }
-        }if(requestCode==22){
+        }
+        if (requestCode == 22) {
             init();
         } else {
             super.onActivityResult(requestCode, resultCode, data);
@@ -366,10 +371,11 @@ public abstract class BaseActivity extends InitActivity {
     }
 
     String logpath;
+
     public void init() {
         //获取application
         mCusApp = (CustomApplication) getApplication();
-        if(mCusApp.getSetLog()){
+        if (mCusApp.getSetLog()) {
             Date date = new Date();
             //按时间创建父目录
             //按时间创建父目录
@@ -384,18 +390,18 @@ public abstract class BaseActivity extends InitActivity {
 
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                String externalStoragePath = Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator + "Download" + File.separator + "DasLog" + File.separator  + parentPath;
-                File parth=new File(externalStoragePath);
-                if(!parth.exists())
+                String externalStoragePath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "Download" + File.separator + "DasLog" + File.separator + parentPath;
+                File parth = new File(externalStoragePath);
+                if (!parth.exists())
                     parth.mkdirs();
                 logpath =
-                        externalStoragePath.toString()  + File.separator + time + ".txt";
-            }else{
+                        externalStoragePath.toString() + File.separator + time + ".txt";
+            } else {
                 LogUtils.checkDir(parentPath);
                 logpath = Environment.getExternalStorageDirectory()
                         .toString() + "/DascomLog/" + parentPath + "/" + time + ".txt";
             }
-            LogUtils.setLog(true,true,
+            LogUtils.setLog(true, true,
                     logpath);
         }
     }
@@ -543,6 +549,7 @@ public abstract class BaseActivity extends InitActivity {
 
 
     int scale = 1;
+
     public void printPdf(View view) {
         if (!TextUtils.isEmpty(pdfPath)) {
             File file = new File(pdfPath);
@@ -630,8 +637,8 @@ public abstract class BaseActivity extends InitActivity {
             mMuPDFCore.onDestroy();
         }
         //关闭日志
-        if(mCusApp!=null && mCusApp.getSetLog()){
-            LogUtils.setLog(false,false,"");
+        if (mCusApp != null && mCusApp.getSetLog()) {
+            LogUtils.setLog(false, false, "");
         }
         super.onDestroy();
     }
