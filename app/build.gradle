@@ -34,9 +34,9 @@ android {
 }
 
 dependencies {
-    implementation project(':pidk_printer_dascom')
-    implementation project(':BluetoothKit:bluetoothk')
-    implementation project(':SwiftKit:basick')
+    implementation project(':dascom')
+    implementation project(':ABluetoothKit:bluetoothk')
+    implementation project(':ASwiftKit:basick')
 
     implementation 'com.blankj:utilcodex:1.26.0'
     implementation 'com.github.getActivity:XXPermissions:13.5'
