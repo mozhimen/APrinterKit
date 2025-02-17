@@ -25,6 +25,7 @@ include ':hprt:d35bt'
 include ':hprt:d35bt:test'
 include ':hprt:n31bt'
 include ':hprt:n31bt:test'
+include ':hprt:n31bt:exam'
 //ALibKit_Google
 include ':ALibKit_Google'
 project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
@@ -57,6 +58,8 @@ include ':JUtilKit:utilcode'
 include ':ASwiftKit'
 project(':ASwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ASwiftKit")
 include ':ASwiftKit:basick'
+include ':ASwiftKit:xmlk'
+include ':ASwiftKit:uik:databinding'
 //ABluetoothKit
 include ':ABluetoothKit'
 project(':ABluetoothKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ABluetoothKit")
@@ -66,7 +69,7 @@ include ':AImageKit'
 project(':AImageKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AImageKit")
 include ':AImageKit:glide'
 include ':AImageKit:imageselector'
-include ':AImageKit:pictureselector'
+include ':AImageKit:pictureselector:v2_6_0'
 //AXmlKit2
 include ':AXmlKit2'
 project(':AXmlKit2').projectDir = new File("D:\\WorkSpace\\GitHub\\AXmlKit2")
@@ -75,8 +78,19 @@ include ':AXmlKit2:brvah'
 include ':APermissionKit'
 project(':APermissionKit').projectDir = new File("D:\\WorkSpace\\GitHub\\APermissionKit")
 include ':APermissionKit:rxpermissions_0_9_3'
+//APermissionKit_XXPermissions
+include ':APermissionKit_XXPermissions'
+project(':APermissionKit_XXPermissions').projectDir = new File("D:\\WorkSpace\\GitHub\\APermissionKit_XXPermissions")
+include ':APermissionKit_XXPermissions:permissionk_xxpermissions'
+include ':APermissionKit_XXPermissions:library'
 //ARxKit
 include ':ARxKit'
 project(':ARxKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ARxKit")
 include ':ARxKit:rxpermissions_0_9_3'
+//AStackKit
+include ':AStackKit'
+project(':AStackKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AStackKit")
+include ':AStackKit:stackk'
+include ':AStackKit:callback'
+include ':AStackKit:basic'
 

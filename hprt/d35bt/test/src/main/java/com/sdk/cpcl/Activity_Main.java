@@ -43,6 +43,7 @@ import com.luck.picture.lib.basic.PictureSelector;
 import com.luck.picture.lib.config.SelectMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.luck.picture.lib.interfaces.OnResultCallbackListener;
+import com.mozhimen.kotlin.utilk.android.app.UtilKPendingIntent;
 import com.mozhimen.kotlin.utilk.android.app.UtilKPendingIntentGet;
 import com.tbruyelle.rxpermissions.RxPermissions;
 
@@ -119,7 +120,7 @@ public class Activity_Main extends Activity {
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
                 mPermissionIntent = PendingIntent.getBroadcast(thisCon, 0, new Intent(ACTION_USB_PERMISSION), FLAG_IMMUTABLE);
             } else {
-                mPermissionIntent = UtilKPendingIntentGet.getBroadCast( 0, new Intent(ACTION_USB_PERMISSION), 0);
+                mPermissionIntent = UtilKPendingIntent.getBroadcast( this,0, new Intent(ACTION_USB_PERMISSION), 0);
             }
             IntentFilter filter = new IntentFilter(ACTION_USB_PERMISSION);
             filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);

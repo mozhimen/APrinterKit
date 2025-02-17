@@ -1,262 +1,271 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout 
-    android:orientation="vertical" 
-    android:layout_width="fill_parent" 
-    android:layout_height="fill_parent"
-  	xmlns:android="http://schemas.android.com/apk/res/android">
-   
-	<LinearLayout 
-	    android:gravity="center_vertical"
-	    android:layout_width="fill_parent"
-	    android:layout_height="fill_parent">   
- 
-	    <ScrollView 
-	        android:scrollbarAlwaysDrawVerticalTrack="false"
-	        android:id="@+id/preview_dashboard_v" 
-	        android:background="#ffebebeb" 
-	        android:scrollbars="vertical" 
-	        android:fadingEdge="vertical"    
-	        android:layout_width="0.0dip"    
-	        android:layout_height="fill_parent" 
-	        android:layout_weight="1.0">
-	        	                
-            <LinearLayout 
-                android:orientation="vertical" 
-                android:layout_width="fill_parent" 
-                android:layout_height="wrap_content">
-				<Button
-					android:id="@+id/btnPrintSelf"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:onClick="onClickDo"
-					android:background="@drawable/selectbackground"
-					android:layout_margin="5dp"
-					android:textColor="#ffffff"
-					android:textSize="20sp"
-					android:text="@string/activity_esc_function_print_self" />
-	            <Button
-			        android:id="@+id/btnGetStatus"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:onClick="onClickDo"		
-                    android:background="@drawable/selectbackground"
-                    android:layout_margin="5dp"
-                    android:textColor="#ffffff"
-					android:textSize="20sp"
-			        android:text="@string/activity_esc_function_btngetprinterstatus" />
-	            
-	            <Button
-			        android:id="@+id/btnOpenCashDrawer"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:onClick="onClickDo"
-                    android:background="@drawable/selectbackground"
-                    android:layout_margin="5dp"
-                    android:textColor="#ffffff"
-					android:textSize="20sp"
-			        android:text="@string/activity_esc_function_btnopencashdrawer" />
-	           	            
-	            <Button
-			        android:id="@+id/btnSampleReceipt"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"	
-			        android:onClick="onClickDo"
-					android:textSize="20sp"
-                    android:textColor="#ffffff"
-                    android:background="@drawable/selectbackground"
-                    android:layout_margin="5dp"
-					android:visibility="gone"
-			        android:text="@string/activity_esc_function_btnsamplereceipt" />
-	            
-	            <Button
-			        android:id="@+id/btn1DBarcodes"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:onClick="onClickDo"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/selectbackground"
-                    android:textColor="#ffffff"
-					android:textSize="20sp"
-			        android:text="@string/activity_esc_function_btn1dbarcodes" />
-	            
-	            <Button
-			        android:id="@+id/btnQRCode"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:onClick="onClickDo"
-                    android:background="@drawable/selectbackground"
-                    android:layout_margin="5dp"
-                    android:textColor="#ffffff"
-					android:textSize="20sp"
-			        android:text="@string/activity_esc_function_btnqrcode" />
-	            
-	            <Button
-			        android:id="@+id/btnPDF417"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-                    android:background="@drawable/selectbackground"
-                    android:layout_margin="5dp"
-                    android:textColor="#ffffff"
-					android:visibility="gone"
-					android:textSize="20sp"
-			        android:text="@string/activity_esc_function_btnpdf417" />
-	            
-	            <Button
-			        android:id="@+id/btnCut"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:onClick="onClickDo"
-                    android:background="@drawable/selectbackground"
-                    android:layout_margin="5dp"
-                    android:textColor="#ffffff"
-					android:textSize="20sp"
-					android:visibility="gone"
-			        android:text="@string/activity_esc_function_btncut" />
-	            
-	            <Button
-			        android:id="@+id/btnTextFormat"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:onClick="onClickDo"
-                    android:background="@drawable/selectbackground"
-                    android:layout_margin="5dp"
-					android:textSize="20sp"
-                    android:textColor="#ffffff"
-			        android:text="@string/activity_esc_function_btntextformatting" />
-	            
-	            <Button
-			        android:id="@+id/btnPrintImageFile"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:onClick="onClickDo"
-                    android:background="@drawable/selectbackground"
-                    android:layout_margin="5dp"
-                    android:textColor="#ffffff"
-					android:textSize="20sp"
-			        android:text="@string/activity_esc_function_btnprintimagefile" />
-	            
-	            <Button
-			        android:id="@+id/btnUpgrade"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:onClick="onClickDo"
-                    android:background="@drawable/selectbackground"
-                    android:layout_margin="5dp"
-                    android:textColor="#ffffff"
-					android:textSize="20sp"
-			        android:text="@string/activity_esc_function_btnprintprnfile" />
-	            
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-	            <Button
-			        android:id="@+id/btnExpress"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:onClick="onClickDo"
-                    android:background="@drawable/selectbackground"
-                    android:layout_margin="5dp"
-                    android:textColor="#ffffff"
-					android:textSize="20sp"
-					android:visibility="gone"
-			        android:text="@string/activity_esc_function_btnexpress" />
-	            
-	            <Button
-			        android:id="@+id/btn_background"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-			        android:onClick="onClickDo"
-                    android:background="@drawable/selectbackground"
-                    android:layout_margin="5dp"
-					android:textSize="20sp"
-                    android:textColor="#ffffff"
-			        android:text="@string/activity_esc_function_btnimagemanage" />
-	            
-	            <Button
-			        android:id="@+id/btn_printSN"
-			        android:layout_width="fill_parent"
-			        android:layout_height="wrap_content"
-                    android:background="@drawable/selectbackground"
-                    android:layout_margin="5dp"
-					android:textSize="20sp"
-                    android:textColor="#ffffff"
-					android:onClick="onClickDo"
-			        android:text="@string/activity_esc_function_btngetremainingpower" />
-				<Button
-					android:id="@+id/btnReverseFeed"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:onClick="onClickDo"
-					android:background="@drawable/selectbackground"
-					android:layout_margin="5dp"
-					android:textColor="#ffffff"
-					android:textSize="20sp"
-					android:visibility="gone"
-					android:text="@string/activity_esc_function_btnReverseFeedNLine" />
-				<Button
-					android:id="@+id/btn_font_text"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:onClick="onClickDo"
-					android:background="@drawable/selectbackground"
-					android:layout_margin="5dp"
-					android:textColor="#ffffff"
-					android:textSize="20sp"
-					android:text="@string/activity_font_print" />
+    <data />
 
-				<Button
-					android:id="@+id/btn_get_electricity"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:onClick="onClickDo"
-					android:background="@drawable/selectbackground"
-					android:layout_margin="5dp"
-					android:textColor="#ffffff"
-					android:textSize="20sp"
-					android:text="@string/activity_electricity" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
 
-				<Button
-					android:id="@+id/btn_set_bluetooth_name"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:onClick="onClickDo"
-					android:background="@drawable/selectbackground"
-					android:layout_margin="5dp"
-					android:textColor="#ffffff"
-					android:textSize="20sp"
-					android:text="@string/activity_bluetooth_name" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical">
 
-				<Button
-					android:id="@+id/btn_double_color_print"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:onClick="onClickDo"
-					android:background="@drawable/selectbackground"
-					android:layout_margin="5dp"
-					android:textColor="#ffffff"
-					android:textSize="20sp"
-					android:text="@string/activity_double_color_print" />
+            <ScrollView
+                android:id="@+id/preview_dashboard_v"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:background="#ffebebeb"
+                android:fadingEdge="vertical"
+                android:scrollbarAlwaysDrawVerticalTrack="false"
+                android:scrollbars="vertical">
 
-				<Button
-					android:id="@+id/btn_voltage"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:onClick="onClickDo"
-					android:background="@drawable/selectbackground"
-					android:layout_margin="5dp"
-					android:textColor="#ffffff"
-					android:textSize="20sp"
-					android:text="@string/activity_voltage" />
-				<Button
-					android:id="@+id/btn_printer_version"
-					android:layout_width="fill_parent"
-					android:layout_height="wrap_content"
-					android:onClick="onClickDo"
-					android:background="@drawable/selectbackground"
-					android:layout_margin="5dp"
-					android:textColor="#ffffff"
-					android:textSize="20sp"
-					android:text="@string/activity_printer_version" />
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-	        </LinearLayout>
-	    </ScrollView>
-	</LinearLayout>
-</LinearLayout>
+                    <Button
+                        android:id="@+id/btnPrintSelf"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_print_self"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btnGetStatus"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_btngetprinterstatus"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btnOpenCashDrawer"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_btnopencashdrawer"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btnSampleReceipt"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_btnsamplereceipt"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btn1DBarcodes"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_btn1dbarcodes"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btnQRCode"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_btnqrcode"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btnPDF417"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:text="@string/activity_esc_function_btnpdf417"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btnCut"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_btncut"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btnTextFormat"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_btntextformatting"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btnPrintImageFile"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_btnprintimagefile"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btnUpgrade"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_btnprintprnfile"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+
+                    <Button
+                        android:id="@+id/btnExpress"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_btnexpress"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btn_background"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_btnimagemanage"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btn_printSN"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_btngetremainingpower"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btnReverseFeed"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_esc_function_btnReverseFeedNLine"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btn_font_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_font_print"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btn_get_electricity"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_electricity"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btn_set_bluetooth_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_bluetooth_name"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btn_double_color_print"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_double_color_print"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btn_voltage"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_voltage"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/btn_printer_version"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/selectbackground"
+                        android:onClick="onClickDo"
+                        android:text="@string/activity_printer_version"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

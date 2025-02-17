@@ -59,7 +59,7 @@ dependencies {
     implementation project(':JUtilKit:utilcode')
     implementation project(':AImageKit:imageselector')
     implementation project(':APermissionKit:rxpermissions_0_9_3')
-    implementation project(':AImageKit:pictureselector')
+    implementation project(':AImageKit:pictureselector:v2_6_0')
     implementation project(':AXmlKit2:brvah')
 
     testImplementation 'junit:junit:4.13.2'

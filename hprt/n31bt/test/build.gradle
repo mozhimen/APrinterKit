@@ -12,7 +12,7 @@ android {
     defaultConfig {
         applicationId "com.sdk.cpcl"
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -48,15 +48,16 @@ android {
     }
     buildFeatures{
         buildConfig = true
+        dataBinding = true
     }
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar","*.aar"])
+    implementation project(':hprt:n31bt')
     implementation project(':ASwiftKit:basick')
+    implementation project(':ASwiftKit:uik:databinding')
     implementation project(':ALibKit_Jetpack:swiperefreshlayout')
     implementation project(':ALibKit_Jetpack:print')
-
     implementation 'com.jakewharton:butterknife:10.0.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
 
@@ -66,7 +67,8 @@ dependencies {
     implementation project(':JUtilKit:utilcode')
     implementation project(':AImageKit:imageselector')
     implementation project(':APermissionKit:rxpermissions_0_9_3')
-    implementation project(':AImageKit:pictureselector')
+    implementation project(':APermissionKit_XXPermissions:permissionk_xxpermissions')
+    implementation project(':AImageKit:pictureselector:v2_6_0')
     implementation project(':AXmlKit2:brvah')
 
     testImplementation 'junit:junit:4.13.2'
