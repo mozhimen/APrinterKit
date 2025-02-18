@@ -53,7 +53,11 @@ android {
 }
 
 dependencies {
-    implementation project(':hprt:n31bt')
+    if(rootProject.name=="APrinterKit"){
+        implementation project(':hprt:n31bt')
+    }else{
+        implementation project(':APrinterKit:hprt:n31bt')
+    }
     implementation project(':ASwiftKit:basick')
     implementation project(':ASwiftKit:uik:databinding')
     implementation project(':ALibKit_Jetpack:swiperefreshlayout')
@@ -66,7 +70,7 @@ dependencies {
 
     implementation project(':JUtilKit:utilcode')
     implementation project(':AImageKit:imageselector')
-    implementation project(':APermissionKit:rxpermissions_0_9_3')
+    implementation project(':APermissionKit:rxpermissions:v0_9_3')
     implementation project(':APermissionKit_XXPermissions:permissionk_xxpermissions')
     implementation project(':AImageKit:pictureselector:v2_6_0')
     implementation project(':AXmlKit2:brvah')
