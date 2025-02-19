@@ -99,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.0"
                 android:background="@drawable/selectbackground"
-                android:onClick="onClickbtnSetting"
+                android:onClick="onClickSetting"
                 android:text="@string/activity_main_setting"
                 android:textColor="#ffffff"
                 android:textSize="20sp"

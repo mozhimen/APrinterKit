@@ -1,7 +1,6 @@
 package com.sdk.cpcl;
 
 import static android.app.PendingIntent.FLAG_IMMUTABLE;
-import static cpcl.PrinterHelper.Print;
 import static cpcl.PrinterHelper.getElectricity;
 
 import android.Manifest;
@@ -32,7 +31,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
 import android.text.TextUtils;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -40,35 +38,26 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.blankj.utilcode.util.LogUtils;
-import com.blankj.utilcode.util.ScreenUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.bumptech.glide.Glide;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
 import com.luck.picture.lib.config.PictureMimeType;
 import com.luck.picture.lib.entity.LocalMedia;
 import com.tbruyelle.rxpermissions.RxPermissions;
-import com.yancy.imageselector.ImageConfig;
-import com.yancy.imageselector.ImageSelector;
-import com.yancy.imageselector.ImageSelectorActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -76,8 +65,6 @@ import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import cpcl.BTOperator;
-import cpcl.Config;
 import cpcl.IPort;
 import cpcl.PrinterHelper;
 import cpcl.PublicFunction;
@@ -220,7 +207,7 @@ public class Activity_Main extends Activity {
         if (!TextUtils.isEmpty(paper)) {
             Activity_Main.paper = paper;
         }
-        String[] arrpaper = getResources().getStringArray(R.array.activity_main_papertype);
+        String[] arrpaper = getResources().getStringArray(R.array.activity_main_papertype_3inch);
         if (LABEL.equals(Activity_Main.paper)) {
             btnOpenCashDrawer.setText(getResources().getString(R.string.activity_esc_function_btnopencashdrawer) + ":" + arrpaper[1]);
         } else {
@@ -1046,7 +1033,7 @@ public class Activity_Main extends Activity {
     }
 
     private void paperAlertDialog(final int paperSize) {
-        final String[] papertype = getResources().getStringArray(paperSize == threeInch ? R.array.activity_main_papertype : R.array.activity_main_papertype_4inch);
+        final String[] papertype = getResources().getStringArray(paperSize == threeInch ? R.array.activity_main_papertype_3inch : R.array.activity_main_papertype_4inch);
         Builder builder = new Builder(Activity_Main.this);
         builder.setTitle(getResources().getString(R.string.activity_esc_function_btnopencashdrawer))
                 .setItems(papertype, new OnClickListener() {

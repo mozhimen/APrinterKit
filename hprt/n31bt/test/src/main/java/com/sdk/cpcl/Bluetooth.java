@@ -10,7 +10,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Build;
-import android.text.TextUtils;
 import android.util.Log;
 
 import com.tbruyelle.rxpermissions.RxPermissions;
@@ -30,7 +29,7 @@ public class Bluetooth {
     private static RxPermissions rxPermissions;
     public static boolean isStaBond = false;
     private static BluetoothDevice mBluetoothDevice;
-    private static OnBondState mOnBondState;
+    private static IOnBondStateListener mIOnBondStateListener;
 
 
     private Bluetooth(Context context){
@@ -112,7 +111,7 @@ public class Bluetooth {
             }
         }
     }
-    public void getData(toData todata){
+    public void setToData(toData todata){
         mTodata=todata;
     }
     public interface toData{
@@ -149,9 +148,9 @@ public class Bluetooth {
                             break;
                         case BluetoothDevice.BOND_BONDED:
                             Log.d("Print", "完成配对");
-                            if (mOnBondState!=null&&mBluetoothDevice!=null&&isStaBond){
+                            if (mIOnBondStateListener !=null&&mBluetoothDevice!=null&&isStaBond){
                                 if (mBluetoothDevice.getAddress().equals(device.getAddress()))
-                                    mOnBondState.bondSuccess();
+                                    mIOnBondStateListener.bondSuccess();
                             }
                             break;
                         case BluetoothDevice.BOND_NONE:
@@ -166,12 +165,12 @@ public class Bluetooth {
             }
         }
     };
-    public static void setOnBondState(BluetoothDevice bluetoothDevice,OnBondState onBondState){
+    public static void setOnBondState(BluetoothDevice bluetoothDevice, IOnBondStateListener IOnBondStateListener){
         isStaBond=true;
         mBluetoothDevice = bluetoothDevice;
-        mOnBondState = onBondState;
+        mIOnBondStateListener = IOnBondStateListener;
     }
-    interface OnBondState {
+    interface IOnBondStateListener {
         void bondSuccess();
     }
 }

@@ -74,6 +74,7 @@ dependencies {
     implementation project(':APermissionKit_XXPermissions:permissionk_xxpermissions')
     implementation project(':AImageKit:pictureselector:v2_6_0')
     implementation project(':AXmlKit2:brvah')
+    implementation project(':ABluetoothKit:bluetoothk')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

@@ -4,7 +4,6 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
-import android.app.PendingIntent
 import android.app.ProgressDialog
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
@@ -41,12 +40,8 @@ import com.luck.picture.lib.config.PictureMimeType
 import com.luck.picture.lib.entity.LocalMedia
 import com.mozhimen.kotlin.elemk.android.bluetooth.cons.CBluetoothDevice
 import com.mozhimen.kotlin.elemk.android.hardware.cons.CUsbManager
-import com.mozhimen.kotlin.utilk.android.app.UtilKPendingIntent
 import com.mozhimen.kotlin.utilk.android.app.UtilKPendingIntentGet
-import com.mozhimen.kotlin.utilk.android.os.UtilKBuildVersion
 import com.mozhimen.kotlin.utilk.android.widget.showToast
-import com.mozhimen.permissionk.xxpermissions.XXPermissionsNavHostUtil
-import com.mozhimen.permissionk.xxpermissions.XXPermissionsRequestUtil
 import com.mozhimen.uik.databinding.bases.viewdatabinding.activity.BaseActivityVDB
 import com.sdk.cpcl.databinding.ActivityMainBinding
 import com.tbruyelle.rxpermissions.RxPermissions
@@ -250,7 +245,7 @@ class MainActivity : BaseActivityVDB<ActivityMainBinding>() {
         if (!TextUtils.isEmpty(paper)) {
             _paperType = paper
         }
-        val arrpaper = resources.getStringArray(R.array.activity_main_papertype)
+        val arrpaper = resources.getStringArray(R.array.activity_main_papertype_3inch)
         if (Activity_Main.LABEL == _paperType) {
             vdb.containerEscFunction.btnOpenCashDrawer.setText(resources.getString(R.string.activity_esc_function_btnopencashdrawer) + ":" + arrpaper[1])
         } else {
@@ -842,7 +837,7 @@ class MainActivity : BaseActivityVDB<ActivityMainBinding>() {
     }
 
     private fun paperAlertDialog(paperSize: Int) {
-        val papertype = resources.getStringArray(if (paperSize == threeInch) R.array.activity_main_papertype else R.array.activity_main_papertype_4inch)
+        val papertype = resources.getStringArray(if (paperSize == threeInch) R.array.activity_main_papertype_3inch else R.array.activity_main_papertype_4inch)
         val builder = AlertDialog.Builder(this)
         builder.setTitle(resources.getString(R.string.activity_esc_function_btnopencashdrawer))
             .setItems(papertype) { dialog, which ->

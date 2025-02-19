@@ -81,7 +81,7 @@
     <string name="activity_esc_function_btnimagemanage">Print Background</string>
     <string name="activity_esc_function_btngetremainingpower">Print SN</string>
     <string name="activity_esc_function_btnReverseFeedNLine">ReverseFeed</string>
-    <string-array name="activity_main_papertype">
+    <string-array name="activity_main_papertype_3inch">
         <item>Receipt paper</item>
         <item>Label paper</item>
         <item>3 Inch Left Top BM paper</item>

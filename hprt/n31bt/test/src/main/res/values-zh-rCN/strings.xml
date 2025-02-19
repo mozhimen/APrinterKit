@@ -86,7 +86,7 @@
     <string name="activity_esc_function_btnimagemanage">水印</string>
     <string name="activity_esc_function_btngetremainingpower">打印机SN</string>
     <string name="activity_esc_function_btnReverseFeedNLine">回退</string>
-    <string-array name="activity_main_papertype">
+    <string-array name="activity_main_papertype_3inch">
         <item >连续纸</item>
         <item >标签纸</item>
         <item >3寸左上黑标</item>

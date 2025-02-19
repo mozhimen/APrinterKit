@@ -22,7 +22,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,7 +91,7 @@ public class BTActivity extends Activity {
         baseQuickAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                Bluetooth.setOnBondState(list.get(position), new Bluetooth.OnBondState() {
+                Bluetooth.setOnBondState(list.get(position), new Bluetooth.IOnBondStateListener() {
                     @Override
                     public void bondSuccess() {
                         if (progressDialog!=null&&progressDialog.isShowing())
@@ -143,7 +142,7 @@ public class BTActivity extends Activity {
         list.clear();
         baseQuickAdapter.notifyDataSetChanged();
         bluetooth.doDiscovery();
-        bluetooth.getData(new Bluetooth.toData() {
+        bluetooth.setToData(new Bluetooth.toData() {
             @Override
             public void succeed(BluetoothDevice bluetoothDevice) {
                 for (BluetoothDevice printBT : list) {
