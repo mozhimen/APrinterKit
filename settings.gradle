@@ -77,7 +77,7 @@ include ':AXmlKit2:brvah'
 //APermissionKit
 include ':APermissionKit'
 project(':APermissionKit').projectDir = new File("D:\\WorkSpace\\GitHub\\APermissionKit")
-include ':APermissionKit:rxpermissions_0_9_3'
+include ':APermissionKit:rxpermissions:v0_9_3'
 //APermissionKit_XXPermissions
 include ':APermissionKit_XXPermissions'
 project(':APermissionKit_XXPermissions').projectDir = new File("D:\\WorkSpace\\GitHub\\APermissionKit_XXPermissions")
@@ -86,7 +86,7 @@ include ':APermissionKit_XXPermissions:library'
 //ARxKit
 include ':ARxKit'
 project(':ARxKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ARxKit")
-include ':ARxKit:rxpermissions_0_9_3'
+include ':ARxKit:rxpermissions:v0_9_3'
 //AStackKit
 include ':AStackKit'
 project(':AStackKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AStackKit")
@@ -94,3 +94,4 @@ include ':AStackKit:stackk'
 include ':AStackKit:callback'
 include ':AStackKit:basic'
 
+include ':hprt:n31bt:ui'

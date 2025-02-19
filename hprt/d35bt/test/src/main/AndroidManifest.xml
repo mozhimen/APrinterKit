@@ -81,5 +81,6 @@
         <activity android:name=".Activity_TextBackground" />
         <activity android:name=".AutoTextActivity"></activity>
         <activity android:name=".BTActivity"></activity>
+        <activity android:name=".BTActivity2"></activity>
     </application>
 </manifest>

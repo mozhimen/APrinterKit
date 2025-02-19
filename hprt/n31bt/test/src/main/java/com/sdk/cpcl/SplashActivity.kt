@@ -19,6 +19,6 @@ class SplashActivity : BaseActivityVDB<ActivityLogoBinding>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-        startActivityAndFinish<Activity_Main>()
+        startActivityAndFinish<TestBtActivity>()
     }
 }

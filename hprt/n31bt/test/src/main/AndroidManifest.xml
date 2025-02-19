@@ -51,6 +51,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".TestBtActivity"
+            android:label="@string/app_title" />
+        <activity
             android:name=".Activity_Main"
             android:label="@string/app_title" />
         <activity android:name=".Activity_1DBarcodes" />
@@ -76,5 +79,6 @@
         <activity android:name=".Activity_TextBackground" />
         <activity android:name=".AutoTextActivity"></activity>
         <activity android:name=".BTActivity"></activity>
+        <activity android:name=".BTActivity2"></activity>
     </application>
 </manifest>

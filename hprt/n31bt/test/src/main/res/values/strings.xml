@@ -119,6 +119,7 @@
     <string name="activity_devicelist_get_device_err">Get Device Error:</string>
     <string name="activity_devicelist_bond_error">"Bond error!Please bond bluetooth printer in settings panel first."</string>
 
+    <string name="picture_cancel" translatable="false">Cancel</string>
     <string name="activity_wifi_lblipaddress">IP Address:</string>
     <string name="activity_wifi_lblport">Port:</string>
     <string name="activity_wifi_btnconnect">Connect</string>

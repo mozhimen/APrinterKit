@@ -8,14 +8,7 @@ import com.dascom.print.PrintCommands.ZPL
 import com.dascom.print.Transmission.BluetoothPipe
 import com.dascom.print.Transmission.Pipe
 import com.dascom.print.Utils.BluetoothUtils
-import com.mozhimen.basick.manifestk.cons.CPermission
-import com.mozhimen.basick.manifestk.permission.ManifestKPermission
-import com.mozhimen.basick.utilk.android.app.UtilKPermission
-import com.mozhimen.basick.utilk.android.util.dt
-import com.mozhimen.basick.utilk.android.util.wt
-import com.mozhimen.basick.utilk.bases.BaseUtilK
-import com.mozhimen.bluetoothk.BluetoothK
-import com.mozhimen.bluetoothk.commons.BluetoothKConnectWithDataManageCallback
+import com.mozhimen.kotlin.utilk.bases.BaseUtilK
 import com.mozhimen.pidk_printer_dascom.helpers.PrinterDascomUtil
 import java.io.IOException
 

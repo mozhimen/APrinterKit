@@ -4,6 +4,7 @@
     <string name="app_name">CPCL</string>
     <string name="app_title">CPCL V1.05.01Test01</string>
     <string name="action_settings">Settings</string>
+    <string name="picture_cancel" translatable="false">Cancel</string>
 
     <string name="logo_show_time">1500</string>
     <string name="activity_test_page">SELF_TEST</string>

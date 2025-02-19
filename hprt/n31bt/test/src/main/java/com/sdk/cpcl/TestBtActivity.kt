@@ -46,7 +46,7 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
 
     companion object {
         private const val PAPERTYPE: String = "papertype"
-
+        private const val LABEL: String = "1"
         private const val REQUEST_ENABLE_BT: Int = 2
         private const val threeInch: Int = 0
         private const val fourInch: Int = 1
@@ -132,7 +132,7 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
             _paperType = paperType
         }
         val arrpaper = resources.getStringArray(R.array.activity_main_papertype)
-        if (Activity_Main.LABEL == _paperType) {
+        if (LABEL == _paperType) {
             vdb.containerEscFunction.btnOpenCashDrawer.setText(resources.getString(R.string.activity_esc_function_btnopencashdrawer) + ":" + arrpaper[1])
         } else {
             vdb.containerEscFunction.btnOpenCashDrawer.setText(resources.getString(R.string.activity_esc_function_btnopencashdrawer) + ":" + arrpaper[0])
@@ -168,7 +168,7 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
                 }
             }
         } catch (e: java.lang.Exception) {
-            Log.e(TAG, (java.lang.StringBuilder("Activity_Main --> onActivityResult ")).append(e.message).toString())
+            Log.e(TAG, (java.lang.StringBuilder("--> onActivityResult ")).append(e.message).toString())
         }
     }
 
@@ -226,7 +226,7 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
                 Log.d("PRTLIB", "BTO_EnableBluetooth --> Open OK")
             }
         } else {
-            Log.d("HPRTSDKSample", (java.lang.StringBuilder("Activity_Main --> EnableBluetooth ").append("Bluetooth Adapter is null.")).toString())
+            Log.d("HPRTSDKSample", (java.lang.StringBuilder("--> EnableBluetooth ").append("Bluetooth Adapter is null.")).toString())
         }
         return bRet
     }
@@ -296,21 +296,6 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
             }.show()
     }
 
-    private fun setExpress() {
-        val builder = AlertDialog.Builder(this)
-        builder.setIcon(R.drawable.logo2)
-        val cities = resources.getStringArray(R.array.activity_main_express)
-        builder.setItems(cities) { dialog, which ->
-            when (which) {
-                0 -> STexpress()
-                1 -> ZTexpress()
-                2 -> TTexpress()
-                else -> {}
-            }
-        }
-        builder.show()
-    }
-
     private fun setTestPage() {
         try {
             PrinterHelper.printAreaSize("0", "200", "200", "1400", "1")
@@ -363,125 +348,6 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
         try {
             PrinterHelper.ReverseFeed(50)
         } catch (e: java.lang.Exception) {
-        }
-    }
-
-    private fun TTexpress() {
-        try {
-            val pum = java.util.HashMap<String, String>()
-            pum["[Referred]"] = "蒙 锡林郭勒盟"
-            pum["[City]"] = "锡林郭勒盟 包"
-            pum["[Number]"] = "108"
-            pum["[Receiver]"] = "渝州"
-            pum["[Receiver_Phone]"] = "15182429075"
-            pum["[Receiver_address1]"] = "内蒙古自治区 锡林郭勒盟 正黄旗 解放东路与" //收件人地址第一行
-            pum["[Receiver_address2]"] = "外滩路交叉口62号静安中学静安小区10栋2单元" //收件人第二行（若是没有，赋值""）
-            pum["[Receiver_address3]"] = "1706室" //收件人第三行（若是没有，赋值""）
-            pum["[Sender]"] = "洲瑜"
-            pum["[Sender_Phone]"] = "13682429075"
-            pum["[Sender_address1]"] = "浙江省 杭州市 滨江区 滨盛路1505号1706室信息部,滨盛路1505号滨盛" //寄件人地址第一行
-            pum["[Sender_address2]"] = "滨盛路1505号1706室信息部" //寄件人第二行（若是没有，赋值""）
-            pum["[Barcode]"] = "998016450402"
-            pum["[Waybill]"] = "运单号：998016450402"
-            pum["[Product_types]"] = "数码产品"
-            pum["[Quantity]"] = "数量：22"
-            pum["[Weight]"] = "重量：22.66KG"
-            val keySet: Set<String> = pum.keys
-            val iterator = keySet.iterator()
-            val inputStream = this.resources.assets.open("TTKD.txt") //打印模版放在assets文件夹里
-            var path = inputStream.inputStream2bytes_use_stream().bytes2str(charset("utf-8"))  //打印模版以utf-8无bom格式保存
-            while (iterator.hasNext()) {
-                val string = iterator.next()
-                path = path.replace(string, pum[string]!!)
-            }
-            PrinterHelper.printText(path)
-            if ("1" == _paperType) {
-                PrinterHelper.Form()
-            }
-            PrinterHelper.Print()
-        } catch (e: java.lang.Exception) {
-            Log.e("HPRTSDKSample", (java.lang.StringBuilder("Activity_Main --> PrintSampleReceipt ")).append(e.message).toString())
-        }
-    }
-
-    private fun ZTexpress() {
-        try {
-            val pum = java.util.HashMap<String, String>()
-            pum["[payment]"] = "18"
-            pum["[remark]"] = "上海"
-            pum["[Barcode]"] = "376714121"
-            pum["[orderCodeNumber]"] = "100"
-            pum["[date]"] = "200"
-            pum["[siteName]"] = "上海 上海市 长宁区"
-            pum["[Receiver]"] = "申大通"
-            pum["[Receiver_Phone]"] = "13826514987"
-            pum["[Receiver_address]"] = "上海市宝山区共和新路47"
-            pum["[Sender]"] = "快小宝"
-            pum["[Sender_Phone]"] = "13826514987"
-            pum["[Sender_address]"] = "上海市长宁区北曜路1178号（鑫达商务楼）"
-            pum["[goodName1]"] = "鞋子"
-            pum["[goodName2]"] = "衬衫"
-            pum["[wight]"] = "10kg"
-            pum["[price]"] = "200"
-            pum["[payment]"] = "18"
-            pum["[orderCode]"] = "12345"
-            pum["[goodName]"] = "帽子"
-            pum["[nowDate]"] = "2017.3.13"
-            val keySet: Set<String> = pum.keys
-            val iterator = keySet.iterator()
-            val inputStream = this.resources.assets.open("ZhongTong.txt") //打印模版放在assets文件夹里
-            var path = inputStream.inputStream2bytes_use_stream().bytes2str(charset("utf-8")) //打印模版以utf-8无bom格式保存
-            while (iterator.hasNext()) {
-                val string = iterator.next()
-                path = path.replace(string, pum[string]!!)
-            }
-            PrinterHelper.printText(path)
-            if ("1" == _paperType) {
-                PrinterHelper.Form()
-            }
-            PrinterHelper.Print()
-        } catch (e: java.lang.Exception) {
-            Log.e("HPRTSDKSample", (java.lang.StringBuilder("Activity_Main --> PrintSampleReceipt ")).append(e.message).toString())
-        }
-    }
-
-    private fun STexpress() {
-        try {
-//			PrinterHelper.openEndStatic(true)
-            val pum = java.util.HashMap<String, String>()
-            pum["[barcode]"] = "363604310467"
-            pum["[distributing]"] = "上海 上海市 长宁区"
-            pum["[receiver_name]"] = "申大通"
-            pum["[receiver_phone]"] = "13826514987"
-            pum["[receiver_address1]"] = "上海市宝山区共和新路4719弄共"
-            pum["[receiver_address2]"] = "和小区12号306室" //收件人地址第一行
-            pum["[sender_name]"] = "快小宝" //收件人第二行（若是没有，赋值""）
-            pum["[sender_phone]"] = "13826514987" //收件人第三行（若是没有，赋值""）
-            pum["[sender_address1]"] = "上海市长宁区北曜路1178号（鑫达商务楼）"
-            pum["[sender_address2]"] = "1号楼305室"
-            val keySet: Set<String> = pum.keys
-            val iterator = keySet.iterator()
-            val inputStream = this.resources.assets.open("STO_CPCL.txt") //打印模版放在assets文件夹里
-            var path = inputStream.inputStream2bytes_use_stream().bytes2str(charset("utf-8")) //打印模版以utf-8无bom格式保存
-            while (iterator.hasNext()) {
-                val string = iterator.next()
-                path = path.replace(string, pum[string]!!)
-            }
-            PrinterHelper.printText(path)
-            val inbmp = this.resources.assets.open("logo_sto_print1.png")
-            val bitmap = BitmapFactory.decodeStream(inbmp)
-            val inbmp2 = this.resources.assets.open("logo_sto_print2.png")
-            val bitmap2 = BitmapFactory.decodeStream(inbmp2)
-            PrinterHelper.Expanded("10", "20", bitmap, 0, 0) //向打印机发送LOGO
-            PrinterHelper.Expanded("10", "712", bitmap2, 0, 0) //向打印机发送LOGO
-            PrinterHelper.Expanded("10", "1016", bitmap2, 0, 0) //向打印机发送LOGO
-            if ("1" == _paperType) {
-                PrinterHelper.Form()
-            }
-            PrinterHelper.Print()
-            //			PrinterHelper.getEndStatus(16)
-        } catch (e: java.lang.Exception) {
-            Log.e("HPRTSDKSample", (java.lang.StringBuilder("Activity_Main --> PrintSampleReceipt ")).append(e.message).toString())
         }
     }
 
@@ -627,7 +493,7 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
             }
             PrinterHelper.RowSetX("0")
         } catch (e: java.lang.Exception) {
-            Log.e(TAG, (java.lang.StringBuilder("Activity_Main --> PrintSampleReceipt ")).append(e.message).toString())
+            Log.e(TAG, (java.lang.StringBuilder("--> PrintSampleReceipt ")).append(e.message).toString())
         }
     }
 
@@ -651,7 +517,7 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
                     ).subscribe { aBoolean ->
                         if (aBoolean) {
                             _connectType = "Bluetooth"
-                            val intent = Intent(this, BTActivity::class.java)
+                            val intent = Intent(this, BTActivity2::class.java)
                             intent.putExtra("TAG", 0)
                             startActivityForResult(intent, 0)
                         }
@@ -665,7 +531,7 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
                     ).subscribe { aBoolean ->
                         if (aBoolean) {
                             _connectType = "Bluetooth"
-                            val intent = Intent(this, BTActivity::class.java)
+                            val intent = Intent(this, BTActivity2::class.java)
                             intent.putExtra("TAG", 0)
                             startActivityForResult(intent, 0)
                         }
@@ -673,7 +539,7 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
                 }
             }
         } catch (e: java.lang.Exception) {
-            Log.e("HPRTSDKSample", (java.lang.StringBuilder("Activity_Main --> onClickConnect $_connectType")).append(e.message).toString())
+            Log.e("HPRTSDKSample", (java.lang.StringBuilder("--> onClickConnect $_connectType")).append(e.message).toString())
         }
     }
 
@@ -685,7 +551,7 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
             vdb.txtTips.setText(R.string.activity_main_tips)
             return
         } catch (e: java.lang.Exception) {
-            Log.e(TAG, (java.lang.StringBuilder("Activity_Main --> onClickClose ")).append(e.message).toString())
+            Log.e(TAG, (java.lang.StringBuilder("--> onClickClose ")).append(e.message).toString())
         }
     }
 
@@ -696,7 +562,7 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
             startActivityForResult(myIntent, PrinterHelper.ACTIVITY_IMAGE_FILE)
             startActivityFromChild(this, myIntent, 0)
         } catch (e: java.lang.Exception) {
-            Log.e(TAG, (java.lang.StringBuilder("Activity_Main --> onClickClose ")).append(e.message).toString())
+            Log.e(TAG, (java.lang.StringBuilder("--> onClickClose ")).append(e.message).toString())
         }
     }
 
@@ -730,8 +596,6 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
             startActivityFromChild(this, myIntent, 0)
         } else if (view.id == R.id.btnPrintTestPage) {
             setTestPage()
-        } else if (view.id == R.id.btnExpress) {
-            setExpress()
         } else if (view.id == R.id.btnReverseFeed) {
             ReverseFeed()
         } else if (view.id == R.id.btn_background) {
