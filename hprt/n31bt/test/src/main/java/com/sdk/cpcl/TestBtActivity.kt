@@ -120,7 +120,7 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
         try {
             if (data == null) return
             when (resultCode) {
-                Activity.RESULT_CANCELED -> {
+                Activity.RESULT_OK -> {
                     connectBT(data.getStringExtra("SelectedBDAddress"))
                 }
 
@@ -158,9 +158,6 @@ class TestBtActivity : BaseActivityVDB<ActivityTestBtBinding>() {
             }
         }.start()
     }
-
-
-
 
     @SuppressLint("SetTextI18n")
     private fun showSelectPaperTypesDialog(paperSize: Int) {
