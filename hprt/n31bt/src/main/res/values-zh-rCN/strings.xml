@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="status_ready">就绪</string>
+    <string name="status_nopage">缺纸</string>
+    <string name="status_open">开盖</string>
+    <string name="status_error">错误</string>
+</resources>

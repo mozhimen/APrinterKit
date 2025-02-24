@@ -11,10 +11,7 @@
     <string name="activity_test_line">横线</string>
     <string name="activity_test_box">矩形</string>
     
-    <string name="activity_Statues_ready">就绪</string>
-    <string name="activity_Statues_nopage">缺纸</string>
-    <string name="activity_Statues_open">开盖</string>
-    <string name="activity_Statues_error">错误</string>
+
     
     
     
@@ -86,35 +83,11 @@
     <string name="activity_esc_function_btnimagemanage">水印</string>
     <string name="activity_esc_function_btngetremainingpower">打印机SN</string>
     <string name="activity_esc_function_btnReverseFeedNLine">回退</string>
-    <string-array name="activity_main_papertype_3inch">
-        <item >连续纸</item>
-        <item >标签纸</item>
-        <item >3寸左上黑标</item>
-        <item >3寸左下黑标</item>
-        <item >右上黑标</item>
-        <item >右下黑标</item>
-        <item >中上黑标</item>
-        <item >中下黑标</item>
-        <item >2寸左上黑标</item>
-        <item >2寸左下黑标</item>
-    </string-array>
-    <string-array name="activity_main_papertype_4inch">
-        <item >连续纸</item>
-        <item >标签纸</item>
-        <item >2寸黑标</item>
-        <item >3寸黑标</item>
-        <item >4寸黑标</item>
-    </string-array>
-    <string-array name="activity_main_paper_size">
-        <item>3寸</item>
-        <item>4寸</item>
-    </string-array>
     <string-array name="activity_main_express">
         <item >申通快递</item>
         <item >中通快递</item>
         <item >天天快递</item>
     </string-array>
-
     <string name="activity_devicelist_title_paired_devices">已配对设备</string>
     <string name="activity_devicelist_title_other_devices">其它设备</string>
     <string name="activity_devicelist_button_scan">扫描蓝牙</string>

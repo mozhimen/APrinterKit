@@ -19,11 +19,6 @@
     <string name="activity_global_right_align">Right</string>
     <string name="activity_global_cmd_send">Printer code is sended.</string>
 
-    <string name="activity_Statues_ready">Ready</string>
-    <string name="activity_Statues_nopage">No pager</string>
-    <string name="activity_Statues_open">Open the lid</string>
-    <string name="activity_Statues_error">Error</string>
-
     <string name="activity_main_printer">Printer List:</string>
     <string name="activity_main_bt">Bluetooth</string>
     <string name="activity_main_wifi">WIFI</string>
@@ -81,29 +76,9 @@
     <string name="activity_esc_function_btnimagemanage">Print Background</string>
     <string name="activity_esc_function_btngetremainingpower">Print SN</string>
     <string name="activity_esc_function_btnReverseFeedNLine">ReverseFeed</string>
-    <string-array name="activity_main_papertype_3inch">
-        <item>Receipt paper</item>
-        <item>Label paper</item>
-        <item>3 Inch Left Top BM paper</item>
-        <item>3 Inch Left BLE BM paper</item>
-        <item>Right Top BM paper</item>
-        <item>Right BLE BM paper</item>
-        <item>Central Top BM paper</item>
-        <item>Central BLE BM paper</item>
-        <item>2 Inch Left Top BM paper</item>
-        <item>2 Inch Left BLE BM paper</item>
-    </string-array>
-    <string-array name="activity_main_papertype_4inch">
-        <item >Receipt paper</item>
-        <item >Label paper</item>
-        <item >2 Inch BM paper</item>
-        <item >3 Inch BM paper</item>
-        <item >4 Inch BM paper</item>
-    </string-array>
-    <string-array name="activity_main_paper_size">
-        <item>3 Inch</item>
-        <item>4 Inch</item>
-    </string-array>
+
+
+
     <string-array name="activity_main_express">
         <item>ST express</item>
         <item>ZT express</item>

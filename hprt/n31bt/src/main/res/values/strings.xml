@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="status_ready">Ready</string>
+    <string name="status_nopage">No pager</string>
+    <string name="status_open">Open the lid</string>
+    <string name="status_error">Error</string>
+</resources>

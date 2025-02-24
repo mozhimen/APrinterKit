@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="papertype_3inch">
+        <item >连续纸</item>
+        <item >标签纸</item>
+        <item >3寸左上黑标</item>
+        <item >3寸左下黑标</item>
+        <item >右上黑标</item>
+        <item >右下黑标</item>
+        <item >中上黑标</item>
+        <item >中下黑标</item>
+        <item >2寸左上黑标</item>
+        <item >2寸左下黑标</item>
+    </string-array>
+    <string-array name="papertype_4inch">
+        <item >连续纸</item>
+        <item >标签纸</item>
+        <item >2寸黑标</item>
+        <item >3寸黑标</item>
+        <item >4寸黑标</item>
+    </string-array>
+    <string-array name="papersize">
+        <item>3寸</item>
+        <item>4寸</item>
+    </string-array>
+</resources>

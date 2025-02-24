@@ -1,15 +1,15 @@
 package com.sdk.cpcl
 
 import android.annotation.SuppressLint
-import android.app.ProgressDialog
 import android.bluetooth.BluetoothDevice
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.chad.library.adapter.base.BaseQuickAdapter
-import com.chad.library.adapter.base.BaseViewHolder
 import com.mozhimen.bluetoothk.BluetoothK
 import com.mozhimen.bluetoothk.BluetoothKScanProxy
 import com.mozhimen.bluetoothk.commons.IBluetoothKScanListener
@@ -17,10 +17,13 @@ import com.mozhimen.kotlin.elemk.android.app.cons.CActivity
 import com.mozhimen.kotlin.lintk.optins.OApiCall_BindLifecycle
 import com.mozhimen.kotlin.lintk.optins.OApiCall_BindViewLifecycle
 import com.mozhimen.kotlin.lintk.optins.OApiInit_ByLazy
+import com.mozhimen.kotlin.lintk.optins.OApiInit_InApplication
 import com.mozhimen.kotlin.utilk.android.bluetooth.isBondState_BOND_BONDED
+import com.mozhimen.kotlin.utilk.android.util.UtilKLogWrapper
 import com.mozhimen.kotlin.utilk.android.widget.showToast
+import com.mozhimen.kotlin.utilk.kotlin.ifNotEmptyOr
 import com.mozhimen.uik.databinding.bases.viewdatabinding.activity.BaseActivityVDB
-import com.sdk.cpcl.databinding.ActivityBtBinding
+import com.sdk.cpcl.databinding.ActivityBluetoothBinding
 
 /**
  * @ClassName BTActivity2
@@ -29,75 +32,80 @@ import com.sdk.cpcl.databinding.ActivityBtBinding
  * @Date 2025/2/19 0:19
  * @Version 1.0
  */
-class BTActivity2 : BaseActivityVDB<ActivityBtBinding>() {
+class BluetoothActivity : BaseActivityVDB<ActivityBluetoothBinding>() {
+    companion object {
+        const val EXTRA_BLUETOOTH_ADDRESS = "EXTRA_BLUETOOTH_ADDRESS"
+    }
+
     private var bluetoothDevices: MutableList<BluetoothDevice> = ArrayList()
-    private var baseQuickAdapter: BaseQuickAdapter<BluetoothDevice, BaseViewHolder> = object : BaseQuickAdapter<BluetoothDevice, BaseViewHolder>(android.R.layout.simple_list_item_2, bluetoothDevices) {
-        @SuppressLint("MissingPermission")
-        override fun convert(helper: BaseViewHolder, item: BluetoothDevice?) {
-            if (item != null) {
-                if (item.name != null) helper.setText(android.R.id.text1, if (item.name.isEmpty()) "Null" else item.name)
-                helper.setText(android.R.id.text2, item.address)
+    private var baseQuickAdapter: BaseQuickAdapter<BluetoothDevice, VHKLifecycle2> = object : BaseQuickAdapter<BluetoothDevice, VHKLifecycle2>(bluetoothDevices) {
+        override fun onBindViewHolder(holder: VHKLifecycle2, position: Int, item: BluetoothDevice?) {
+            super.onBindViewHolder(holder, position, item)
+            item ?: return
+            item.name?.ifNotEmptyOr({
+                holder.findViewById<TextView>(android.R.id.text1).setText(it)
+            }, {
+                holder.findViewById<TextView>(android.R.id.text1).setText("Null")
+            })?: kotlin.run {
+                holder.findViewById<TextView>(android.R.id.text1).setText("Null")
+            }
+            item.address?.ifNotEmptyOr({
+                holder.findViewById<TextView>(android.R.id.text2).setText(item.address)
+            },{
+                holder.findViewById<TextView>(android.R.id.text2).setText("Null")
+            })?: kotlin.run {
+                holder.findViewById<TextView>(android.R.id.text2).setText("Null")
             }
         }
-    }
-//    private var bluetooth: Bluetooth = Bluetooth.getBluetooth(this)
-    @OptIn(OApiInit_ByLazy::class, OApiCall_BindLifecycle::class, OApiCall_BindViewLifecycle::class)
-    private val bluetoothKScanProxy by lazy { BluetoothKScanProxy() }
-    private var progressDialog: ProgressDialog? = null
 
-    override fun initData(savedInstanceState: Bundle?) {
-        BluetoothK.instance.requestBluetoothPermission(this) {
-            super.initData(savedInstanceState)
+        override fun onCreateViewHolder(context: Context, parent: ViewGroup, viewType: Int): VHKLifecycle2 {
+            return VHKLifecycle2(parent, android.R.layout.simple_list_item_2)
         }
     }
 
-    @OptIn(OApiInit_ByLazy::class, OApiCall_BindLifecycle::class, OApiCall_BindLifecycle::class, OApiCall_BindViewLifecycle::class)
+    //    private var bluetooth: Bluetooth = Bluetooth.getBluetooth(this)
+    @OptIn(OApiInit_ByLazy::class, OApiCall_BindLifecycle::class, OApiCall_BindViewLifecycle::class)
+    private val bluetoothKScanProxy by lazy { BluetoothKScanProxy() }
+
+    @OptIn(OApiInit_ByLazy::class, OApiCall_BindLifecycle::class, OApiCall_BindLifecycle::class, OApiCall_BindViewLifecycle::class, OApiInit_InApplication::class)
     @SuppressLint("MissingPermission")
     override fun initView(savedInstanceState: Bundle?) {
         if (BluetoothK.instance.getBluetoothAdapter() == null) {
             "没有找到蓝牙适配器".showToast()
+            onBackPressed()
             return
         }
 
         vdb.recyHistory.setLayoutManager(LinearLayoutManager(this))
         vdb.recyHistory.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         vdb.recyHistory.setAdapter(baseQuickAdapter)
-        initBT()
         baseQuickAdapter.setOnItemClickListener(BaseQuickAdapter.OnItemClickListener { adapter, view, position ->
-            Bluetooth.setOnBondState(bluetoothDevices.get(position)) {
-                if (progressDialog != null && progressDialog!!.isShowing()) progressDialog!!.dismiss()
-                val intent = Intent()
-                intent.putExtra("SelectedBDAddress", bluetoothDevices[position].address)
-                setResult(CActivity.RESULT_OK, intent)
-                finish()
-            }
-            if (bluetoothDevices.get(position).isBondState_BOND_BONDED()) {
-                val intent = Intent()
-                intent.putExtra("SelectedBDAddress", bluetoothDevices[position].address)
-                setResult(CActivity.RESULT_OK, intent)
+            if (bluetoothDevices[position].isBondState_BOND_BONDED()) {
+                setResult(CActivity.RESULT_OK, Intent().apply {
+                    putExtra(EXTRA_BLUETOOTH_ADDRESS, bluetoothDevices[position].address)
+                })
                 finish()
             } else {
-                progressDialog = ProgressDialog(this@BTActivity2)
-                progressDialog!!.setMessage(getString(R.string.activity_devicelist_connect))
-                progressDialog!!.show()
-                Thread { bluetoothKScanProxy.startBound(bluetoothDevices[position]) }.start()
+//                Thread { bluetoothKScanProxy.startBound(bluetoothDevices[position]) }.start()
+                startConnect(bluetoothDevices[position])
             }
         })
-        vdb.swipeRefresh.setColorSchemeResources(R.color.colorPrimary)
-        vdb.swipeRefresh.setOnRefreshListener(SwipeRefreshLayout.OnRefreshListener {
-            initBT()
+        vdb.swipeRefresh.setColorSchemeResources(R.color.black)
+        vdb.swipeRefresh.setOnRefreshListener {
             if (vdb.swipeRefresh.isRefreshing) vdb.swipeRefresh.isRefreshing = false
-        })
+            startScan()
+        }
     }
 
     @OptIn(OApiInit_ByLazy::class, OApiCall_BindLifecycle::class, OApiCall_BindViewLifecycle::class)
     override fun initObserver() {
         bluetoothKScanProxy.apply {
-            setBluetoothKScanListener(object :IBluetoothKScanListener{
+            setBluetoothKScanListener(object : IBluetoothKScanListener {
                 @SuppressLint("NotifyDataSetChanged")
                 override fun onFound(bluetoothDevice: BluetoothDevice) {
-                    for (printBT in bluetoothDevices) {
-                        if (bluetoothDevice.address == printBT.address) {
+                    UtilKLogWrapper.d(TAG, "onFound: ${bluetoothDevice.address}")
+                    for (bluetoothDevice1 in bluetoothDevices) {
+                        if (bluetoothDevice.address == bluetoothDevice1.address) {
                             return
                         }
                     }
@@ -106,16 +114,30 @@ class BTActivity2 : BaseActivityVDB<ActivityBtBinding>() {
                     bluetoothDevices.add(bluetoothDevice)
                     baseQuickAdapter.notifyDataSetChanged()
                 }
+
+                override fun onBonded(bluetoothDevice: BluetoothDevice) {
+                    setResult(CActivity.RESULT_OK, Intent().apply {
+                        putExtra(EXTRA_BLUETOOTH_ADDRESS, bluetoothDevice.address)
+                    })
+                    finish()
+                }
             })
-            bindLifecycle(this@BTActivity2)
+            bindLifecycle(this@BluetoothActivity)
         }
+
+        startScan()
     }
 
     @OptIn(OApiInit_ByLazy::class, OApiCall_BindLifecycle::class, OApiCall_BindViewLifecycle::class)
     @SuppressLint("NotifyDataSetChanged")
-    private fun initBT() {
+    private fun startScan() {
         bluetoothDevices.clear()
         baseQuickAdapter.notifyDataSetChanged()
         bluetoothKScanProxy.startScan(this)
+    }
+
+    @OptIn(OApiInit_ByLazy::class, OApiCall_BindLifecycle::class, OApiCall_BindViewLifecycle::class)
+    private fun startConnect(bluetoothDevice: BluetoothDevice) {
+        bluetoothKScanProxy.startBound(bluetoothDevice)
     }
 }

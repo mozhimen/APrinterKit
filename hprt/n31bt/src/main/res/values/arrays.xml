@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="papertype_3inch">
+        <item>Receipt paper</item>
+        <item>Label paper</item>
+        <item>3 Inch Left Top BM paper</item>
+        <item>3 Inch Left BLE BM paper</item>
+        <item>Right Top BM paper</item>
+        <item>Right BLE BM paper</item>
+        <item>Central Top BM paper</item>
+        <item>Central BLE BM paper</item>
+        <item>2 Inch Left Top BM paper</item>
+        <item>2 Inch Left BLE BM paper</item>
+    </string-array>
+    <string-array name="papertype_4inch">
+        <item >Receipt paper</item>
+        <item >Label paper</item>
+        <item >2 Inch BM paper</item>
+        <item >3 Inch BM paper</item>
+        <item >4 Inch BM paper</item>
+    </string-array>
+    <string-array name="papersize">
+        <item>3 Inch</item>
+        <item>4 Inch</item>
+    </string-array>
+</resources>

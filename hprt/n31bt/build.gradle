@@ -37,7 +37,7 @@ android {
 
 dependencies {
     api fileTree(dir: "libs", include: ["*.jar","*.aar"])
-    implementation project(':KUtilKit:android')
+    implementation project(':ASwiftKit:basick')
     implementation project(':ABluetoothKit:bluetoothk')
 
     testImplementation 'junit:junit:4.13.2'
