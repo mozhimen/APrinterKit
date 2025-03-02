@@ -211,6 +211,23 @@ class PrintProvider {
         PrinterHelper.printAreaSize(offset, horizontal, vertical, height, "1")
 
     /**
+     * #### 3.26 **打印宽度**
+     * - 参数
+     *   | 参数 | 描述                        |
+     *   | :--- | :-------------------------- |
+     *   | pw   | 指定页面宽度。（单位：dot）（单位：dot）200dpi  8 dot = 1mm，300dpi 12 dot = 1mm |
+     *
+     * - 返回
+     *   | 值    | 描述     |
+     *   | ----- | -------- |
+     *   | 大于0 | 发送成功 |
+     *   | -1    | 发送失败 |
+     *
+     */
+    fun pageWidth(pw: String): Int =
+        PrinterHelper.PageWidth(pw)
+
+    /**
      * #### 	3.10 **对齐方式**
      *
      * - 参数
@@ -312,7 +329,7 @@ class PrintProvider {
     fun setMag(ratio: String): Int =
         setMag(ratio, ratio)
 
-    fun setMagFalse():Int =
+    fun setMagFalse(): Int =
         setMag("1")
 
     /**
