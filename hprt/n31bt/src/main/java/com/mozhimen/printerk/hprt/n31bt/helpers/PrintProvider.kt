@@ -289,6 +289,42 @@ class PrintProvider {
         PrinterHelper.Text(PrinterHelper.TEXT, font, "0", x, y, data)
 
     /**
+     * #### 	3.11 **打印条码**
+     *
+     * - 描述
+     *
+     *   ```java
+     *   int barcode(String command,String type,String width, String ratio,String height,String 			x,String y,boolean undertext,String number,String size,String offset, String data )
+     *   ```
+     *
+     * - 参数
+     *
+     *   | 参数      | 描述                                                         |
+     *   | :-------- | :----------------------------------------------------------- |
+     *   | command   | PrinterHelper.BARCODE：水平方向<br/>PrinterHelper.VBARCODE：垂直方向 |
+     *   | type      | 条码类型：<br/>PrinterHelper.UPCA,PrinterHelper.UPCA2,PrinterHelper.UPCA5,<br />PrinterHelper.UPCE, PrinterHelper.UPCE2,PrinterHelper.UPCE5 ,<br/>PrinterHelper.EAN13,PrinterHelper.EAN132,PrinterHelper.EAN135,<br />PrinterHelper.EAN8, PrinterHelper.EAN82,PrinterHelper.EAN85,<br/>PrinterHelper.code39, PrinterHelper.code39C,PrinterHelper.F39,<br />PrinterHelper.F39C,PrinterHelper.code93,PrinterHelper.I2OF5,<br/>PrinterHelper.I2OF5C,PrinterHelper.I2OF5G,PrinterHelper.code128,<br />PrinterHelper.UCCEAN128,PrinterHelper.CODABAR,PrinterHelper.CODABAR16,<br/>PrinterHelper.MSI,PrinterHelper.MSI10,PrinterHelper.MSI1010,<br />PrinterHelper.MSI1110,PrinterHelper.POSTNET,PrinterHelper.FIM |
+     *   | width     | 窄条的单位宽度                                               |
+     *   | ratio     | 宽条窄条的比例<br />0=1.5:1 ,  1=2.0:1 ,  2=2.5:1 ,  3=3.0:1 ,  4=3.5:1 ,<br/>20=2.0:1 , 21=2.1:1 , 22=2.2:1 , 23=2.3:1 , 24=2.4:1 , 25=2.5:1<br/>26=2.6:1 , 27=2.7:1 , 28=2.8:1 , 29=2.9:1 , 30=3.0:1 , |
+     *   | height    | 条码高度                                                     |
+     *   | x         | 条码的起始横坐标。（单位：dot）                              |
+     *   | y         | 条码的起始纵坐标。（单位：dot）                              |
+     *   | undertext | 条码下方的数据是否可见。<br />ture：可见，false：不可见。    |
+     *   | number    | 字体的类型 (undertext=true才生效)                            |
+     *   | size      | 字体的大小(undertext=true才生效)                             |
+     *   | offset    | 条码与文字间的距离(undertext=true才生效)                     |
+     *   | data      | 条码数据                                                     |
+     *
+     * - 返回
+     *
+     *   | 值    | 描述     |
+     *   | ----- | -------- |
+     *   | 大于0 | 发送成功 |
+     *   | -1    | 发送失败 |
+     */
+    fun barcode_code93(x: String, y: String, undertext: Boolean, data: String): Int =
+        PrinterHelper.Barcode(PrinterHelper.BARCODE, PrinterHelper.code93, "2", "1", "50", x, y, undertext, "7", "0", "5", data)
+
+    /**
      * #### 3.31 **字体加粗**
      *
      * - 参数
