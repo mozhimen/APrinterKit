@@ -19,13 +19,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "APrinterKit"
-include ':app'
-include ':dascom'
-include ':hprt:d35bt'
-include ':hprt:d35bt:test'
-include ':hprt:n31bt'
-include ':hprt:n31bt:test'
-include ':hprt:n31bt:exam'
 //ALibKit_Google
 include ':ALibKit_Google'
 project(':ALibKit_Google').projectDir = new File("D:\\WorkSpace\\GitHub\\ALibKit_Google")
@@ -60,10 +53,6 @@ project(':ASwiftKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ASwiftKit")
 include ':ASwiftKit:basick'
 include ':ASwiftKit:xmlk'
 include ':ASwiftKit:uik:databinding'
-//ABluetoothKit
-include ':ABluetoothKit'
-project(':ABluetoothKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ABluetoothKit")
-include ':ABluetoothKit:bluetoothk'
 //AImageKit
 include ':AImageKit'
 project(':AImageKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AImageKit")
@@ -93,5 +82,21 @@ project(':AStackKit').projectDir = new File("D:\\WorkSpace\\GitHub\\AStackKit")
 include ':AStackKit:stackk'
 include ':AStackKit:callback'
 include ':AStackKit:basic'
-
-include ':hprt:n31bt:ui'
+//ABluetoothKit
+include ':ABluetoothKit'
+project(':ABluetoothKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ABluetoothKit")
+include ':ABluetoothKit:bluetoothk'
+//ANavigateKit
+include ':ANavigateKit'
+project(':ANavigateKit').projectDir = new File("D:\\WorkSpace\\GitHub\\ANavigateKit")
+include ':ANavigateKit:start'
+//
+include ':app'
+include ':dascom'
+include ':hprt:d35bt'
+include ':hprt:d35bt:test'
+include ':hprt:n31bt'
+include ':hprt:n31bt:test'
+include ':hprt:n31bt:exam'
+include ':hprt'
+include ':hprt:a300e'

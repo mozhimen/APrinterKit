@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.printerk.hprt.d35'
+    namespace 'com.mozhimen.printerk.hprt.a300e'
     compileSdk 34
 
     defaultConfig {

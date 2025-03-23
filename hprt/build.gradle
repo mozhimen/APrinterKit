@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.mozhimen.printerk.hprt.d35'
+    namespace 'com.mozhimen.printerk.hprt'
     compileSdk 34
 
     defaultConfig {
@@ -36,11 +36,9 @@ android {
 }
 
 dependencies {
-    if (rootProject.name=="APrinterKit"){
-        implementation project(':hprt')
-    }else{
-        implementation project(':APrinterKit:hprt')
-    }
+    api fileTree(dir: "libs", include: ["*.jar","*.aar"])
+    implementation project(':ASwiftKit:basick')
+    implementation project(':ABluetoothKit:bluetoothk')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
