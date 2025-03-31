@@ -13,10 +13,10 @@ import com.mozhimen.kotlin.utilk.wrapper.UtilKRes
 
 fun Int.intStatusCode2strStatus(): String =
     when (this) {
-        AStatus.STATUS_READY -> UtilKRes.gainString(com.mozhimen.printerk.hprt.n31bt.R.string.status_ready)
-        AStatus.STATUS_NOPAPER -> UtilKRes.gainString(com.mozhimen.printerk.hprt.n31bt.R.string.status_nopage)
-        AStatus.STATUS_OPEN -> UtilKRes.gainString(com.mozhimen.printerk.hprt.n31bt.R.string.status_nopage)
-        else -> UtilKRes.gainString(com.mozhimen.printerk.hprt.n31bt.R.string.status_error)
+        AStatus.STATUS_READY -> UtilKRes.gainString(com.mozhimen.printerk.hprt.R.string.status_ready)
+        AStatus.STATUS_NOPAPER -> UtilKRes.gainString(com.mozhimen.printerk.hprt.R.string.status_nopage)
+        AStatus.STATUS_OPEN -> UtilKRes.gainString(com.mozhimen.printerk.hprt.R.string.status_nopage)
+        else -> UtilKRes.gainString(com.mozhimen.printerk.hprt.R.string.status_error)
     }
 
 @IntDef(

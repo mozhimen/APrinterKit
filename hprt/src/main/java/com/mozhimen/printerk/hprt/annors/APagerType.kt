@@ -12,9 +12,9 @@ import com.mozhimen.kotlin.utilk.wrapper.UtilKRes
  */
 fun Int.intPaperTypeCode2strPaperType(pagerSize: Int): String =
     if (pagerSize == APagerSize.PAPERSIZE_THREEINCH)
-        UtilKRes.gainStringArray(com.mozhimen.printerk.hprt.n31bt.R.array.papertype_3inch)[this]
+        UtilKRes.gainStringArray(com.mozhimen.printerk.hprt.R.array.papertype_3inch)[this]
     else
-        UtilKRes.gainStringArray(com.mozhimen.printerk.hprt.n31bt.R.array.papertype_4inch)[this]
+        UtilKRes.gainStringArray(com.mozhimen.printerk.hprt.R.array.papertype_4inch)[this]
 
 @IntDef(
     APagerType.PAPERTYPE_THREEINCH_RECEIPT,

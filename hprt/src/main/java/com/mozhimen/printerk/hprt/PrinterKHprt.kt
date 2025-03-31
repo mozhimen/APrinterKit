@@ -9,14 +9,14 @@ import com.mozhimen.printerk.hprt.annors.APagerType
 import com.mozhimen.printerk.hprt.annors.AStatus
 import com.mozhimen.printerk.hprt.cons.CParams
 import com.mozhimen.printerk.hprt.helpers.FuncProvider
-import com.mozhimen.printerk.hprt.n31bt.helpers.PrintProvider
+import com.mozhimen.printerk.hprt.helpers.PrintProvider
 import com.mozhimen.basick.impls.MutableLiveDataStrict
 import com.mozhimen.kotlin.elemk.commons.IA_Listener
 import cpcl.PrinterHelper
 import cpcl.listener.DisConnectBTListener
 
 /**
- * @ClassName PrinterKHprtN31bt
+ * @ClassName PrinterKHprt
  * @Description TODO
  * @Author Mozhimen / Kolin Zhao
  * @Date 2025/2/20 21:28

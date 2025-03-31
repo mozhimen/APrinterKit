@@ -1,4 +1,4 @@
-package com.mozhimen.printerk.hprt.n31bt.helpers
+package com.mozhimen.printerk.hprt.helpers
 
 import android.content.Context
 import androidx.annotation.IntRange

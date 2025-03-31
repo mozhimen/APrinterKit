@@ -11,7 +11,7 @@ import com.mozhimen.kotlin.utilk.wrapper.UtilKRes
  * @Version 1.0
  */
 fun Int.intPaperSizeCode2strPaperSize(): String =
-    UtilKRes.gainStringArray(com.mozhimen.printerk.hprt.n31bt.R.array.papersize)[this]
+    UtilKRes.gainStringArray(com.mozhimen.printerk.hprt.R.array.papersize)[this]
 
 @IntDef(APagerSize.PAPERSIZE_THREEINCH, APagerSize.PAPERSIZE_FOURINCH)
 annotation class APagerSize {
