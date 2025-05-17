@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace "com.sdk.cpcl"
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.sdk.cpcl"

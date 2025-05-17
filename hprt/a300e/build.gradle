@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.mozhimen.printerk.hprt.a300e'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         minSdk 19
